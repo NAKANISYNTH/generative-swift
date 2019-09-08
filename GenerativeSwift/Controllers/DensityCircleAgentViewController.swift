@@ -44,8 +44,8 @@ class DensityCircleAgentViewController: DensityAgentViewController {
 
         while intersection && count < 100 {
             point = Point(
-                Double(random(min: Int(points[0].x - radiuses[0]), max: Int(points[0].x + radiuses[0]))),
-                Double(random(min: Int(points[0].y - radiuses[0]), max: Int(points[0].y + radiuses[0])))
+                Double(random(in: Int(points[0].x - radiuses[0])..<Int(points[0].x + radiuses[0]))),
+                Double(random(in: Int(points[0].y - radiuses[0])..<Int(points[0].y + radiuses[0])))
             )
             r = minRadius
             

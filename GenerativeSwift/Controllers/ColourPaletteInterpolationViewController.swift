@@ -66,8 +66,8 @@ class ColourPaletteInterpolationViewController: BaseCanvasController {
         }
         grid = [Rectangle]()
 
-        let tileCountX = Int(map(point.x, min: 0, max: canvas.width, toMin: 2, toMax: Double(maxTileCountX)))
-        let tileCountY = Int(map(point.y, min: 0, max: canvas.height, toMin: 2, toMax: Double(maxTileCountY)))
+        let tileCountX = Int(map(point.x, from: 0...canvas.width, to: 2...Double(maxTileCountX)))
+        let tileCountY = Int(map(point.y, from: 0...canvas.height, to: 2...Double(maxTileCountY)))
 
         let tileWidth = canvas.width / Double(tileCountX)
         let tileHeight = canvas.height / Double(tileCountY)
@@ -83,7 +83,7 @@ class ColourPaletteInterpolationViewController: BaseCanvasController {
                 rectangle.strokeColor = nil
                 rectangle.corner = Size(0, 0)
                 
-                let amount = map(Double(gridX), min: 0, max: Double(tileCountX) - 1, toMin: 0, toMax: 1)
+                let amount = map(Double(gridX), from: 0...Double(tileCountX) - 1, to: 0...1)
                 if segmentedControl.selectedSegmentIndex == 0 {
                     let hue = lerp(col1.hue, col2.hue, at: amount)
                     let saturation = lerp(col1.saturation, col2.saturation, at: amount)
@@ -108,17 +108,17 @@ class ColourPaletteInterpolationViewController: BaseCanvasController {
         (0..<maxTileCountY).forEach { _ in
             colorsLeft.append(
                 Color(
-                    hue: Double(random(min: 0, max: 60)) / 360.0,
-                    saturation: Double(random(min: 0, max: 100)) / 100.0,
+                    hue: Double(random(in: 0..<60)) / 360.0,
+                    saturation: Double(random(in: 0..<100)) / 100.0,
                     brightness: 1.0,
                     alpha: 1.0
                 )
             )
             colorsRight.append(
                 Color(
-                    hue: Double(random(min: 160, max: 190)) / 360.0,
+                    hue: Double(random(in: 160..<190)) / 360.0,
                     saturation: 1.0,
-                    brightness: Double(random(min: 0, max: 100)) / 100.0,
+                    brightness: Double(random(in: 0..<100)) / 100.0,
                     alpha: 1.0
                 )
             )

@@ -1,8 +1,7 @@
 use_frameworks!
 
 target 'GenerativeSwift' do
-  pod 'C4', '2.1.1'
-  pod 'RFAboutView-Swift'
+  pod 'C4'
 end
 
 post_install do |installer|

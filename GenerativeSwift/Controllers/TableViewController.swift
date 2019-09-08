@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RFAboutView_Swift
 
 class TableViewController: UITableViewController {
 
@@ -74,7 +73,7 @@ class TableViewController: UITableViewController {
         tableView.rowHeight = 88.0
         
         let infoButton = UIButton(type: .infoLight)
-        infoButton.addTarget(self, action: #selector(infoTapped), for: .touchUpInside)
+//        infoButton.addTarget(self, action: #selector(infoTapped), for: .touchUpInside)
         let infoItem = UIBarButtonItem(customView: infoButton)
         navigationItem.leftBarButtonItem = infoItem
     }
@@ -167,24 +166,24 @@ class TableViewController: UITableViewController {
     }
     */
 
-    @objc func infoTapped(_ sender: AnyObject) {
-        let aboutController = RFAboutViewController(
-            appName: nil,
-            appVersion: nil,
-            appBuild: nil,
-            copyrightHolderName: "tnantoka",
-            contactEmail: nil,
-            contactEmailTitle: nil,
-            websiteURL: URL(string: "https://github.com/tnantoka/generative-swift"),
-            websiteURLTitle: nil,
-            pubYear: "2016")
-        
-        let navController = UINavigationController(rootViewController: aboutController)
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTapped))
-        navController.navigationItem.leftBarButtonItem = doneItem
-
-        present(navController, animated: true, completion: nil)
-    }
+//    @objc func infoTapped(_ sender: AnyObject) {
+//        let aboutController = RFAboutViewController(
+//            appName: nil,
+//            appVersion: nil,
+//            appBuild: nil,
+//            copyrightHolderName: "tnantoka",
+//            contactEmail: nil,
+//            contactEmailTitle: nil,
+//            websiteURL: URL(string: "https://github.com/tnantoka/generative-swift"),
+//            websiteURLTitle: nil,
+//            pubYear: "2016")
+//
+//        let navController = UINavigationController(rootViewController: aboutController)
+//        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTapped))
+//        navController.navigationItem.leftBarButtonItem = doneItem
+//
+//        present(navController, animated: true, completion: nil)
+//    }
     
     @objc func doneTapped(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)

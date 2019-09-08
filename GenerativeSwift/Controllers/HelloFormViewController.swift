@@ -41,9 +41,9 @@ class HelloFormViewController: BaseCanvasController {
     }
     
     func updateCircle() {
-        let circleResolution = Int(map(point.y, min: 64, max: canvas.height, toMin: 2, toMax: 80))
+        let circleResolution = Int(map(point.y, from: 64...canvas.height, to: 2...80))
         let radius = point.x / 2 + 0.5
-        let angle = M_PI * 2 / Double(circleResolution)
+        let angle = .pi * 2 / Double(circleResolution)
         createForm(circleResolution, radius: radius, angle: angle)
     }
     
@@ -57,7 +57,7 @@ class HelloFormViewController: BaseCanvasController {
             let points = [canvas.center, circlePoint(i, angle: angle, radius: radius)]
             let line = Line(points)
             line.lineWidth = point.y / 20
-            line.lineCap = .Square
+            line.lineCap = .square
             canvas.add(line)
             form.append(line)
         }

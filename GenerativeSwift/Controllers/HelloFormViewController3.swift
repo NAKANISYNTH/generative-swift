@@ -50,7 +50,7 @@ class HelloFormViewController3: HelloFormViewController2 {
     }
     
     override func nextX(_ x: Double) -> Double {
-        segmentedControl.selectedSegmentIndex = random(min: 0, max: segmentedControl.numberOfSegments)
+        segmentedControl.selectedSegmentIndex = random(in: 0..<segmentedControl.numberOfSegments)
         
         return super.nextX(x)
     }

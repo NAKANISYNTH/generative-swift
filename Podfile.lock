@@ -1,20 +1,16 @@
 PODS:
-  - C4 (2.1.1)
-  - RFAboutView-Swift (2.0.1)
+  - C4 (3.0.1)
 
 DEPENDENCIES:
-  - C4 (= 2.1.1)
-  - RFAboutView-Swift
+  - C4
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - C4
-    - RFAboutView-Swift
 
 SPEC CHECKSUMS:
-  C4: 50c631f37096fd84498b462dce124552ad958d88
-  RFAboutView-Swift: dc31db0e7bc890ab6c9e1ca8f50e8f97bdba9622
+  C4: 8a51425000f760d5e89ba294a8284467a1bd1231
 
-PODFILE CHECKSUM: 38b1b3d9abeac10f9c0c5854a393d6eea5c2b27b
+PODFILE CHECKSUM: aa6814b1521122cd9c84aa66ae0fef17261a767e
 
 COCOAPODS: 1.5.3

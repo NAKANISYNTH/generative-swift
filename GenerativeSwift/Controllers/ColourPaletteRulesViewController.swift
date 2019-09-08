@@ -67,8 +67,8 @@ class ColourPaletteRulesViewController: BaseCanvasController {
         }
         grid = [Rectangle]()
         
-        let tileCountX = Int(map(point.x, min: 0, max: canvas.width, toMin: 1, toMax: Double(maxTileCountX)))
-        let tileCountY = Int(map(point.y, min: 0, max: canvas.height, toMin: 1, toMax: Double(maxTileCountY)))
+        let tileCountX = Int(map(point.x, from: 0...canvas.width, to: 1...Double(maxTileCountX)))
+        let tileCountY = Int(map(point.y, from: 0...canvas.height, to: 1...Double(maxTileCountY)))
         
         let tileWidth = canvas.width / Double(tileCountX)
         let tileHeight = canvas.height / Double(tileCountY)
@@ -106,71 +106,71 @@ class ColourPaletteRulesViewController: BaseCanvasController {
             (0..<maxTileCountX).forEach { i in
                 if i % 2 == 0 {
                     hueValues.append(192 / 360.0)
-                    saturationValues.append(Double(random(min: 0, max: 100)) / 100.0)
-                    brightnessValues.append(Double(random(min: 10, max: 100)) / 100.0)
+                    saturationValues.append(Double(random(in: 0..<100)) / 100.0)
+                    brightnessValues.append(Double(random(in: 10..<100)) / 100.0)
                 } else {
                     hueValues.append(273 / 360.0)
-                    saturationValues.append(Double(random(min: 0, max: 100)) / 100.0)
-                    brightnessValues.append(Double(random(min: 10, max: 90)) / 100.0)
+                    saturationValues.append(Double(random(in: 0..<100)) / 100.0)
+                    brightnessValues.append(Double(random(in: 10..<90)) / 100.0)
                 }
             }
         case 1:
             (0..<maxTileCountX).forEach { _ in
-                hueValues.append(Double(random(min: 0, max: 360)) / 360.0)
-                saturationValues.append(Double(random(min: 0, max: 100)) / 100.0)
-                brightnessValues.append(Double(random(min: 0, max: 100)) / 100.0)
+                hueValues.append(Double(random(in: 0..<360)) / 360.0)
+                saturationValues.append(Double(random(in: 0..<100)) / 100.0)
+                brightnessValues.append(Double(random(in: 0..<100)) / 100.0)
             }
         case 2:
             (0..<maxTileCountX).forEach { _ in
-                hueValues.append(Double(random(min: 0, max: 360)) / 360.0)
-                saturationValues.append(Double(random(min: 0, max: 100)) / 100.0)
+                hueValues.append(Double(random(in: 0..<360)) / 360.0)
+                saturationValues.append(Double(random(in: 0..<100)) / 100.0)
                 brightnessValues.append(1.0)
             }
         case 3:
             (0..<maxTileCountX).forEach { _ in
-                hueValues.append(Double(random(min: 0, max: 360)) / 360.0)
+                hueValues.append(Double(random(in: 0..<360)) / 360.0)
                 saturationValues.append(1.0)
-                brightnessValues.append(Double(random(min: 0, max: 100)) / 100.0)
+                brightnessValues.append(Double(random(in: 0..<100)) / 100.0)
             }
         case 4:
             (0..<maxTileCountX).forEach { _ in
                 hueValues.append(0)
                 saturationValues.append(0)
-                brightnessValues.append(Double(random(min: 0, max: 100)) / 100.0)
+                brightnessValues.append(Double(random(in: 0..<100)) / 100.0)
             }
         case 5:
             (0..<maxTileCountX).forEach { _ in
                 hueValues.append(195 / 360.0)
                 saturationValues.append(1.0)
-                brightnessValues.append(Double(random(min: 0, max: 100)) / 100.0)
+                brightnessValues.append(Double(random(in: 0..<100)) / 100.0)
             }
         case 6:
             (0..<maxTileCountX).forEach { _ in
                 hueValues.append(195 / 360.0)
-                saturationValues.append(Double(random(min: 0, max: 100)) / 100.0)
+                saturationValues.append(Double(random(in: 0..<100)) / 100.0)
                 brightnessValues.append(1.0)
             }
         case 7:
             (0..<maxTileCountX).forEach { _ in
-                hueValues.append(Double(random(min: 0, max: 180)) / 360.0)
-                saturationValues.append(Double(random(min: 80, max: 100)) / 100.0)
-                brightnessValues.append(Double(random(min: 50, max: 90)) / 100.0)
+                hueValues.append(Double(random(in: 0..<180)) / 360.0)
+                saturationValues.append(Double(random(in: 80..<100)) / 100.0)
+                brightnessValues.append(Double(random(in: 50..<90)) / 100.0)
             }
         case 8:
             (0..<maxTileCountX).forEach { _ in
-                hueValues.append(Double(random(min: 180, max: 360)) / 360.0)
-                saturationValues.append(Double(random(min: 80, max: 100)) / 100.0)
-                brightnessValues.append(Double(random(min: 50, max: 90)) / 100.0)
+                hueValues.append(Double(random(in: 180..<360)) / 360.0)
+                saturationValues.append(Double(random(in: 80..<100)) / 100.0)
+                brightnessValues.append(Double(random(in: 50..<90)) / 100.0)
             }
         case 9:
             (0..<maxTileCountX).forEach { i in
                 if i % 2 == 0 {
-                    hueValues.append(Double(random(min: 0, max: 360)) / 360.0)
+                    hueValues.append(Double(random(in: 0..<360)) / 360.0)
                     saturationValues.append(1.0)
-                    brightnessValues.append(Double(random(min: 0, max: 100)) / 100.0)
+                    brightnessValues.append(Double(random(in: 0..<100)) / 100.0)
                 } else {
                     hueValues.append(195 / 360.0)
-                    saturationValues.append(Double(random(min: 0, max: 100)) / 100.0)
+                    saturationValues.append(Double(random(in: 0..<100)) / 100.0)
                     brightnessValues.append(1.0)
                     
                 }

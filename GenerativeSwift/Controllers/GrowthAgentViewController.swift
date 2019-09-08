@@ -57,11 +57,11 @@ class GrowthAgentViewController: StupidAgentViewController {
     }
     
     func drawCircles() {
-        let r = Double(random(min: 1, max: 8))
+        let r = Double(random(in: 1..<8))
         let intR = Int(r)
         let point = Point(
-            Double(random(min: intR, max: Int(canvas.width) - intR)),
-            Double(random(min: intR, max: Int(canvas.height) - intR))
+            Double(random(in: intR..<Int(canvas.width) - intR)),
+            Double(random(in: intR..<Int(canvas.height) - intR))
         )
         
         var closestDist = Double.infinity

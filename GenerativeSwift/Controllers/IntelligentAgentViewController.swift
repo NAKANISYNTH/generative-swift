@@ -35,7 +35,7 @@ class IntelligentAgentViewController: StupidAgentViewController {
     }
     
     override func draw() {
-        let speed = map(point.x, min: 0, max: canvas.width, toMin: 2, toMax: 100)
+        let speed = map(point.x, from: 0...canvas.width, to: 2...100)
         
         (0..<Int(speed)).forEach { _ in
             x += cos(degToRad(angle)) * step
@@ -89,7 +89,7 @@ class IntelligentAgentViewController: StupidAgentViewController {
     }
 
     func randomAngle() -> Double {
-        let angle = (Double(random(min: -angleCount, max: angleCount)) + 0.5) * 90 / Double(angleCount)
+        let angle = (Double(random(in: -angleCount..<angleCount)) + 0.5) * 90 / Double(angleCount)
         switch direction {
         case .north:
             return angle - 90

@@ -63,14 +63,14 @@ class DensityAgentViewController: GrowthAgentViewController {
         while intersection && count < 100 {
             if !mousePressed {
                 point = Point(
-                    Double(random(min: Int(maxRadius), max: Int(canvas.width - maxRadius))),
-                    Double(random(min: Int(maxRadius), max: Int(canvas.height - maxRadius)))
+                    Double(random(in: Int(maxRadius)..<Int(canvas.width - maxRadius))),
+                    Double(random(in: Int(maxRadius)..<Int(canvas.height - maxRadius)))
                 )
                 r = minRadius
             } else {
                 point = Point(
-                    Double(random(min: Int(self.point.x - mouseRect / 2), max: Int(self.point.x + mouseRect / 2))),
-                    Double(random(min: Int(self.point.y - mouseRect / 2), max: Int(self.point.y + mouseRect / 2)))
+                    Double(random(in: Int(self.point.x - mouseRect / 2)..<Int(self.point.x + mouseRect / 2))),
+                    Double(random(in: Int(self.point.y - mouseRect / 2)..<Int(self.point.y + mouseRect / 2)))
                 )
                 r = 1
             }
@@ -128,11 +128,11 @@ class DensityAgentViewController: GrowthAgentViewController {
         circle.fillColor = nil
     }
     
-    func upTapped(_ sender: AnyObject) {
+    @objc func upTapped(_ sender: AnyObject) {
         mouseRect += 4.0
     }
     
-    func downTapped(_ sender: AnyObject) {
+    @objc func downTapped(_ sender: AnyObject) {
         mouseRect = max(mouseRect - 4.0, 1.0)
     }
 }

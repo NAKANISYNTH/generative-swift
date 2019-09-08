@@ -19,11 +19,11 @@ class AlignmentGridViewController: BaseCanvasController {
     var lineCap: Line.LineCap {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            return .Butt
+            return .butt
         case 1:
-            return .Round
+            return .round
         case 2:
-            return .Square
+            return .square
         default:
             fatalError()
         }

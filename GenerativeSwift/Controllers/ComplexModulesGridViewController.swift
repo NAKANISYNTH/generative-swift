@@ -53,8 +53,8 @@ class ComplexModulesGridViewController: BaseCanvasController {
         }
         form = [Shape]()
 
-        let endSize = map(point.x, min: 0, max: canvas.size.width, toMin: tileSize / 2, toMax: 0)
-        let endOffset = map(point.y, min: 0, max: canvas.size.height, toMin: 0, toMax: (tileSize - endSize) / 2)
+        let endSize = map(point.x, from: 0...canvas.size.width, to: tileSize / 2...0)
+        let endOffset = map(point.y, from: 0...canvas.size.height, to: 0...(tileSize - endSize) / 2)
         
         let circleCount = Int(point.x / 30 + 1)
         (0..<tileCountY).forEach { gridY in
@@ -69,8 +69,8 @@ class ComplexModulesGridViewController: BaseCanvasController {
                     form.append(circle)
                     
                     let maxI = max(Double(circleCount) - 1, 1)
-                    let diameter = map(Double(i), min: 0, max: maxI, toMin: tileSize, toMax: endSize)
-                    let offset = map(Double(i), min: 0, max: maxI, toMin: 0, toMax: endOffset)
+                    let diameter = map(Double(i), from: 0...maxI, to: tileSize...endSize)
+                    let offset = map(Double(i), from: 0...maxI, to: 0...endOffset)
                     
                     var x = Double(gridX) * tileSize + tileSize / 2
                     var y = Double(gridY) * tileSize + tileSize / 2

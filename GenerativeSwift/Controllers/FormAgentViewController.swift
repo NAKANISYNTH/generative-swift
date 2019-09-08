@@ -43,8 +43,8 @@ class FormAgentViewController: StupidAgentViewController {
         }
         
         (0..<formResolution).forEach { i in
-            points[i].x += Double(random(min: -stepSize * 100, max: stepSize * 100)) / 100
-            points[i].y += Double(random(min: -stepSize * 100, max: stepSize * 100)) / 100
+            points[i].x += Double(random(in: -stepSize * 100..<stepSize * 100)) / 100
+            points[i].y += Double(random(in: -stepSize * 100..<stepSize * 100)) / 100
         }
 
         let path = Path()

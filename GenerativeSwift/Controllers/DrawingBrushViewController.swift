@@ -105,7 +105,7 @@ class DrawingBrushViewController: DensityAgentViewController {
     }
     
     func changeLength() {
-        lineLength = Double(random(min: 50, max: 160))
+        lineLength = Double(random(in: 50..<160))
     }
     
     func changeColor(_ tag: Int?) {
@@ -120,10 +120,10 @@ class DrawingBrushViewController: DensityAgentViewController {
             color = Color(red: 197, green: 0, blue: 123, alpha: 1)
         case 5?:
             color = Color(
-                red: random(min: 0, max: 255),
-                green: random(min: 0, max: 255),
-                blue: random(min: 0, max: 255),
-                alpha: Double(random(min: 80, max: 150)) / 255.0
+                red: random(in: 0..<255),
+                green: random(in: 0..<255),
+                blue: random(in: 0..<255),
+                alpha: Double(random(in: 80..<150)) / 255.0
             )
         default:
             fatalError()
@@ -140,21 +140,21 @@ class DrawingBrushViewController: DensityAgentViewController {
         mousePressed = false
         point = canvas.center
         
-        let randomColor = random(min: 0, max: 3) != 0 ? true : false
-        let randomLength = random(min: 0, max: 3) != 0 ? true : false
-        let randomSpeed = random(min: 0, max: 3) == 0 ? true : false
-        let decrease = (!randomLength && random(min: 0, max: 4) == 0) ? true : false
-        let withReverse = random(min: 0, max: 5) == 0 ? true : false
+        let randomColor = random(in: 0..<3) != 0 ? true : false
+        let randomLength = random(in: 0..<3) != 0 ? true : false
+        let randomSpeed = random(in: 0..<3) == 0 ? true : false
+        let decrease = (!randomLength && random(in: 0..<4) == 0) ? true : false
+        let withReverse = random(in: 0..<5) == 0 ? true : false
         
-        changeColor(random(min: 1, max: 6))
+        changeColor(random(in: 1..<6))
         
-        let count = random(min: 1, max: 50)
+        let count = random(in: 1..<50)
         (0..<count).forEach { i in
             
-            let steps = random(min: 10, max: 40)
+            let steps = random(in: 10..<40)
             (0..<steps).forEach { j in
                 if randomColor && j % 5 == 0 {
-                    changeColor(random(min: 1, max: 6))
+                    changeColor(random(in: 1..<6))
                 }
                 
                 if randomLength && j % 10 == 0 {
@@ -162,14 +162,14 @@ class DrawingBrushViewController: DensityAgentViewController {
                 }
                 
                 if randomSpeed && j % 15 == 0 {
-                    angleSpeed += Double(random(min: -100, max: 100)) / 100
+                    angleSpeed += Double(random(in: -100..<100)) / 100
                 }
                 
                 drawLine()
             }
 
             if decrease {
-                lineLength -= Double(random(min: 0, max: min(4, Int(lineLength))))
+                lineLength -= Double(random(in: 0..<min(4, Int(lineLength))))
             }
             
             if withReverse && i % 3 == 0 {

@@ -61,9 +61,9 @@ class HelloFormViewController2: HelloFormViewController {
         clear()
         
         var x = nextX(canvas.width)
-        let min = Double(random(min: 10, max: 30))
+        let min = Double(random(in: 10..<30))
         while x > min {
-            let y = Double(random(min: 84, max: Int(canvas.height * 0.25)))
+            let y = Double(random(in: 84..<Int(canvas.height * 0.25)))
             drawRandom(x, y: y)
             x = nextX(x)
         }
@@ -84,7 +84,7 @@ class HelloFormViewController2: HelloFormViewController {
         
         let y = canvas.height
         let vx = 4.0
-        var x = Double(random(min: 10, max: 50))
+        var x = Double(random(in: 10..<50))
         (1...12).forEach { i in
             let _ = nextX(x)
             drawRandom(x, y: y)
@@ -93,24 +93,24 @@ class HelloFormViewController2: HelloFormViewController {
     }
     
     func drawRandom(_ x: Double, y: Double) {
-        (0..<random(min: 10, max: 30)).forEach { _ in
+        (0..<random(in: 10..<30)).forEach { _ in
             let randomX = positionWithNoise(x)
             point = Point(randomX, y)
-            (0..<random(min: 1, max: 4)).forEach { _ in
+            (0..<random(in: 1..<4)).forEach { _ in
                 updateCircle()
             }
         }
     }
     
     func positionWithNoise(_ pos: Double) -> Double {
-        let min = random(min: 85, max: 90)
-        let max = random(min: 110, max: 115)
-        return pos * Double(random(min: min, max: max)) / 100.0
+        let min = random(in: 85..<90)
+        let max = random(in: 110..<115)
+        return pos * Double(random(in: min..<max)) / 100.0
     }
     
     func nextX(_ x: Double) -> Double {
-        let min = random(min: 55, max: 65)
-        let max = random(min: 80, max: 90)
-        return x * Double(random(min: min, max: max)) / 100.0
+        let min = random(in: 55..<65)
+        let max = random(in: 80..<90)
+        return x * Double(random(in: min..<max)) / 100.0
     }
 }

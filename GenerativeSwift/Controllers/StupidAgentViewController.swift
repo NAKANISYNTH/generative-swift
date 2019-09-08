@@ -61,7 +61,7 @@ class StupidAgentViewController: BaseCanvasController {
     }
 
     @objc func draw() {
-        let speed = map(point.x, min: 0, max: canvas.width, toMin: 2, toMax: 100)
+        let speed = map(point.x, from: 0...canvas.width, to: 2...100)
         var points = [Point]()
         (0..<Int(speed)).forEach { _ in
             let direction = Direction.random()

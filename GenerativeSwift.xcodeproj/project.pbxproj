@@ -472,12 +472,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GenerativeSwift/Pods-GenerativeSwift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/C4/C4.framework",
-				"${BUILT_PRODUCTS_DIR}/RFAboutView-Swift/RFAboutView_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/C4.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RFAboutView_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
