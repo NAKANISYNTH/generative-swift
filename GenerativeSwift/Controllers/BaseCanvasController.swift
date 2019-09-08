@@ -53,14 +53,14 @@ class BaseCanvasController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func trashTapped(_ sender: AnyObject) {
+    @objc func trashTapped(_ sender: AnyObject) {
         let alertController = UIAlertController(title: "Clear Canvas", message: "Are You Sure?", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default) { _ in self.clear() })
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
     
-    func actionTapped(_ sender: AnyObject) {
+    @objc func actionTapped(_ sender: AnyObject) {
         let alertController = UIAlertController(title: "Actions", message: nil, preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "Save as an Image", style: .default) { _ in self.save() })
         alertController.addAction(UIAlertAction(title: "Source Code", style: .default) { _ in self.github() })

@@ -180,7 +180,7 @@ class ColourPaletteRulesViewController: BaseCanvasController {
         }
     }
     
-    func segmentedControlChanged(_ sender: AnyObject) {
+    @objc func segmentedControlChanged(_ sender: AnyObject) {
         changeColors()
         updateGrid()
     }

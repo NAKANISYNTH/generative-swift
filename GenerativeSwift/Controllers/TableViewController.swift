@@ -167,7 +167,7 @@ class TableViewController: UITableViewController {
     }
     */
 
-    func infoTapped(_ sender: AnyObject) {
+    @objc func infoTapped(_ sender: AnyObject) {
         let aboutController = RFAboutViewController(
             appName: nil,
             appVersion: nil,
@@ -186,7 +186,7 @@ class TableViewController: UITableViewController {
         present(navController, animated: true, completion: nil)
     }
     
-    func doneTapped(_ sender: AnyObject) {
+    @objc func doneTapped(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)
     }
 }

@@ -57,7 +57,7 @@ class HelloFormViewController2: HelloFormViewController {
         canvas.add(polygon)
     }
     
-    func autoTapped(_ sender: AnyObject) {
+    @objc func autoTapped(_ sender: AnyObject) {
         clear()
         
         var x = nextX(canvas.width)
@@ -69,7 +69,7 @@ class HelloFormViewController2: HelloFormViewController {
         }
     }
     
-    func circleTapped(_ sender: AnyObject) {
+    @objc func circleTapped(_ sender: AnyObject) {
         clear()
         
 //        var x = 10.0

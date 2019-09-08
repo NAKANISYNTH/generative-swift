@@ -81,15 +81,15 @@ class DrawingBrushViewController: DensityAgentViewController {
         color = defaultColor
     }
     
-    func reverseTapped(_ sender: AnyObject) {
+    @objc func reverseTapped(_ sender: AnyObject) {
         reverse()
     }
     
-    func colorTapped(_ sender: AnyObject) {
+    @objc func colorTapped(_ sender: AnyObject) {
         changeColor(sender.tag)
     }
 
-    func arrowTapped(_ sender: AnyObject) {
+    @objc func arrowTapped(_ sender: AnyObject) {
         switch sender.tag {
         case 0?:
             lineLength += 5
@@ -135,7 +135,7 @@ class DrawingBrushViewController: DensityAgentViewController {
         angleSpeed *= -1
     }
     
-    func autoTapped(_ sender: AnyObject) {
+    @objc func autoTapped(_ sender: AnyObject) {
         clear()
         mousePressed = false
         point = canvas.center

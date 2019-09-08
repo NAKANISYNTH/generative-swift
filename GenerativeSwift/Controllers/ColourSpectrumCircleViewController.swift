@@ -98,7 +98,7 @@ class ColourSpectrumCircleViewController: BaseCanvasController {
         return triangle
     }
     
-    func sliderChanged(_ sender: AnyObject) {
+    @objc func sliderChanged(_ sender: AnyObject) {
         slider.value = round(slider.value)
         updateCircle()
     }

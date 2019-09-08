@@ -110,27 +110,27 @@ class MovementGridViewController2: MovementGridViewController {
         }
     }
     
-    func segmentedControlChanged(_ sender: AnyObject) {
+    @objc func segmentedControlChanged(_ sender: AnyObject) {
         changeColor()
         updateForm()
     }
 
-    func upTapped(_ sender: AnyObject) {
+    @objc func upTapped(_ sender: AnyObject) {
         changeSize(0)
         updateForm()
     }
 
-    func downTapped(_ sender: AnyObject) {
+    @objc func downTapped(_ sender: AnyObject) {
         changeSize(1)
         updateForm()
     }
 
-    func leftTapped(_ sender: AnyObject) {
+    @objc func leftTapped(_ sender: AnyObject) {
         changeSize(2)
         updateForm()
     }
 
-    func rightTapped(_ sender: AnyObject) {
+    @objc func rightTapped(_ sender: AnyObject) {
         changeSize(3)
         updateForm()
     }

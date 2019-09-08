@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'GenerativeSwift' do
-  pod 'C4'
+  pod 'C4', '2.1.1'
   pod 'RFAboutView-Swift'
 end
 

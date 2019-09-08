@@ -60,7 +60,7 @@ class StupidAgentViewController: BaseCanvasController {
         clear()
     }
 
-    func draw() {
+    @objc func draw() {
         let speed = map(point.x, min: 0, max: canvas.width, toMin: 2, toMax: 100)
         var points = [Point]()
         (0..<Int(speed)).forEach { _ in
@@ -114,14 +114,14 @@ class StupidAgentViewController: BaseCanvasController {
         canvas.add(polygon)
     }
     
-    func start() {
+    @objc func start() {
         startItem.isEnabled = false
         stopItem.isEnabled = true
 
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(draw), userInfo: nil, repeats: true)
     }
     
-    func stop() {
+    @objc func stop() {
         startItem.isEnabled = true
         stopItem.isEnabled = false
 
